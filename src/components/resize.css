@@ -1,0 +1,13 @@
+#resizer{
+    height: fit-content;
+}
+#resizer input{
+    width: 80px;
+    margin-left: 10px;
+    font-size: 17px;
+}
+#resizer button{
+    border-radius: 5px;
+    color: #02026f;
+    background-color: #03f737;
+}

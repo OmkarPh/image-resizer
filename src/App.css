@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+.App{
+  margin: 0px;
+  padding: 0px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.box{
+  margin: auto;
+  margin-top: 5vh;
+  background-color: rgb(216, 255, 218);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow: hidden;
+  border-radius: 7px;
+  touch-action: none;
+  border: 2px dashed black;
+}
+.item {
+  width: 350px;
+  height: 200px;
+  overflow: hidden;
+  background-color: rgb(105, 248, 248);
+  border: 2px solid rgba(25, 168, 125, 0.5);
+  border-radius: 5%;
+  touch-action: none;
+  user-select: none;
+  position: relative;
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  padding-bottom: 35px;
+}
+.item:active {
+  /* border-color: black;
+  border-width: 4px; */
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+.defaultCursor{
+  cursor: default;
+}
+.titlebar{
+  margin: 0;
+  padding: 10px;
+  background-color: bisque;
+  touch-action: none;
+  user-select: none;
+  overflow: hidden;
+}
+.titlebar input{
+  color: transparent;
+}
+.title{
+  width: 65%;
+  float: left;
+}
+.inputImage{
+  width: 35%;
 }
 
-.App-link {
-  color: #61dafb;
+.thumbnail, .thumbnail center{
+  padding: 3px;
+  height: 180px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item .thumbnail img{
+  max-width:100%;
+  max-height:100%;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }

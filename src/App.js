@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useRef } from 'react'
+
+import Input from './components/Input';
+import Output from './components/Output';
+import Resize from './components/Resize';
 
 function App() {
+  const outputModule = useRef(null);
+  const inputModule = useRef(null);
+  const resizeModule = useRef(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="box" style={{height: '90vh', width: '98%', position: 'relative', padding: '0', border: '2px solid black'}}>
+            <Input
+              ref={inputModule} 
+              injectRatio={ratio => resizeModule.current.injectRatio(ratio)} />
+            <Resize
+               takeInput={()=>inputModule.current.getImg()} 
+               displayResult={resizedIMG => outputModule.current.changeImage(resizedIMG)}
+                ref={resizeModule} />
+            <Output ref={outputModule} />
+        </div>
     </div>
   );
 }
