@@ -43,12 +43,13 @@ const Resize = forwardRef(({displayResult, takeInput}, ref) => {
     }
 
   useImperativeHandle(ref, () => ({
-    injectRatio(newRatio){
+    injectRatio(newRatio, newWidth){
       setRatio(newRatio);
-      if(Math.round(width/newRatio) !== (width/newRatio))
-        setHeight((width/newRatio).toFixed(2));
+      setWidth(newWidth);
+      if(Math.round(newWidth/newRatio) !== (newWidth/newRatio))
+          setHeight((newWidth/newRatio).toFixed(2));
       else
-        setHeight(width/newRatio);
+          setHeight(newWidth/newRatio)
     }
   }));
 

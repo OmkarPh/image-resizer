@@ -29,6 +29,7 @@
   cursor: -moz-grab;
   cursor: -webkit-grab;
   padding-bottom: 35px;
+  margin: 15px;
 }
 .item:active {
   /* border-color: black;

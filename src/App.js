@@ -15,7 +15,7 @@ function App() {
       <div className="box" style={{height: '90vh', width: '98%', position: 'relative', padding: '0', border: '2px solid black'}}>
             <Input
               ref={inputModule} 
-              injectRatio={ratio => resizeModule.current.injectRatio(ratio)} />
+              injectRatio={(ratio,w) => resizeModule.current.injectRatio(ratio,w)} />
             <Resize
                takeInput={()=>inputModule.current.getImg()} 
                displayResult={resizedIMG => outputModule.current.changeImage(resizedIMG)}

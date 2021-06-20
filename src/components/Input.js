@@ -13,7 +13,7 @@ const Input = forwardRef(({injectRatio}, ref) => {
       img.onload = () => {
         let width = img.naturalWidth || img.width;
         let height = img.naturalHeight || img.height;
-        injectRatio(width/height);
+        injectRatio(width/height, width);
       }
     }
 
