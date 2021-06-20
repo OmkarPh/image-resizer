@@ -12,11 +12,9 @@ const Output = forwardRef((props, ref) => {
   }
 
   useImperativeHandle(ref, () => ({
-
     changeImage(resizedImg){
       setoutputImage(resizedImg);
-    }
-    
+    }    
   }));
 
 
@@ -24,12 +22,14 @@ const Output = forwardRef((props, ref) => {
   return (
       <Draggable bounds="parent" className="item">
             <div className="item">
+
                 <div className="titlebar">
                   <div className="title">
                       Resized image
                   </div>
                   <button className="inputImage" onClick={downloadImage}>Download !</button>
                 </div>
+
                 <div className="thumbnail">
                   <center>
                     <img 
@@ -39,6 +39,7 @@ const Output = forwardRef((props, ref) => {
                       ref={resizedImage} />
                   </center>
                 </div>
+                
             </div>
           </Draggable>
   )

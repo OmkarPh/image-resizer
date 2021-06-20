@@ -58,10 +58,12 @@ const Resize = forwardRef(({displayResult, takeInput}, ref) => {
             <div className="item" onClick={e=>e.stopPropagation()} id="resizer">
                 <center>
                     <br/><br/>
-                    Width: <input type="number" value={width} onChange={e=>changeWidth(e.target.value)}/>
+                    Width: <input type="number" value={width} onChange={e=>changeWidth(e.target.value)}/> pixels
+
                     <br/><br/>
-                    Height: <input type="number" value={height} onChange={e=>changeHeight(e.target.value)} />
-                    <br/><br/>
+                    Height: <input type="number" value={height} onChange={e=>changeHeight(e.target.value)} /> pixels
+
+                    <br/><br/><br/>
                     <button onClick={process}>
                         Resize
                     </button>

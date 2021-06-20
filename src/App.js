@@ -13,14 +13,18 @@ function App() {
   return (
     <div className="App">
       <div className="box" style={{height: '90vh', width: '98%', position: 'relative', padding: '0', border: '2px solid black'}}>
+        
             <Input
               ref={inputModule} 
               injectRatio={(ratio,w) => resizeModule.current.injectRatio(ratio,w)} />
+
             <Resize
-               takeInput={()=>inputModule.current.getImg()} 
-               displayResult={resizedIMG => outputModule.current.changeImage(resizedIMG)}
-                ref={resizeModule} />
+              ref={resizeModule}
+              takeInput={()=>inputModule.current.getImg()} 
+              displayResult={resizedIMG => outputModule.current.changeImage(resizedIMG)} />
+
             <Output ref={outputModule} />
+
         </div>
     </div>
   );
